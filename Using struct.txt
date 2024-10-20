@@ -1,0 +1,41 @@
+Using struct keyword using loop to enter record of multiple students 
+#include<stdio.h>
+#include<string.h>
+typedef struct student
+{ char name[20];
+  int age;
+  float JeeScore;
+}sinfo;
+sinfo input(sinfo s[],int n)
+{ int i;
+for(i=0;i<n;i++)
+{ 
+  printf("%d student's name: ",i+1);
+  getchar();
+  fgets(s[i].name, sizeof(s[i].name),stdin);
+  s[i].name[strcspn(s[i].name,"\n")]='\0';
+  printf("%d student's age: ",i+1);
+  scanf("%d",&s[i].age);
+  printf("%d student's Jee score: ",i+1);
+  scanf("%f",&s[i].JeeScore);
+  
+}
+
+}
+sinfo output(sinfo s[],int n)
+{  int j;
+  printf("Details of all %d students:\n",n);  
+  for(j=0;j<n;j++)
+  {
+  printf("\n%d. Name: %s\n   Age: %d\n   Jee score: %f\n\n",j+1,s[j].name,s[j].age,s[j].JeeScore);
+  }
+}
+void main()
+{ int n;
+printf("Enter the number of students whose data you want to enter: ");
+scanf("%d",&n);  
+
+  sinfo s[n];
+  input(s,n);
+  output(s,n);
+}
