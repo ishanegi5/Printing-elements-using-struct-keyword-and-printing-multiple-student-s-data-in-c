@@ -1,4 +1,4 @@
-Using struct keyword using loop to enter record of multiple students 
+//Using struct keyword using loop to enter record of multiple students 
 #include<stdio.h>
 #include<string.h>
 typedef struct student
